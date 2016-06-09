@@ -10,8 +10,8 @@ var config = {
 };
 
 var speech_to_text = watson.speech_to_text({
-    username: '83508cc9-9671-4f69-8676-842b2a9e6d1d',
-    password: '1tpOTg42bgqZ',
+    username: '[add username]',
+    password: '[add pasword]',
     version: 'v1'
 });
 
@@ -40,10 +40,10 @@ function transcribe(fileName) {
 }
 
 var dbConfig = {
-    server: "devapp\\MSSQLDEV",
+    server: "[add DB]",
     database: "Test",
-    user: "sa",
-    password: "V0iceApp",
+    user: "[add user]",
+    password: "[pwd]",
     port: 1433
 };
 
@@ -82,26 +82,12 @@ function watchDirectory() {
         if (err) {throw err;}
 
 
-       for (var i = 90;i < 100;i++) {
+       for (var i = 0;i < p.length;i++) {
 
-
-           var waitTill = new Date(new Date().getTime() + 5 * 1000);
-          // while (waitTill > new Date()) {}
            Pop(p + files[i]);
-           //transcribe(p + files[i]);
-
        }
-        /*
-        files.map(function (file) {
-            return path.join(p, file);
-
-        }).filter(function (file) {
-            return fs.statSync(file).isFile();
-
-        }).forEach(function (file) {
-           ; //console.log("%s (%s)", file, path.extname(file));
-        });
-        */
+     
+       
     });
 
     function Pop(fname) {
